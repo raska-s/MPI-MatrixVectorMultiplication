@@ -27,7 +27,7 @@ mpicc -D M=$x -D N=$y -D P=$z para1f.c -o para1f.exe
 mpicc -D M=$x -D N=$y -D P=$z para2f.c -o para2f.exe
 mpicc -D M=$x -D N=$y -D P=$z para3f.c -o para3f.exe
 # para_extern is only possible if x=y
-mpicc -D M=$x -D P=$z para_extern.c -o para_extern.exe
+# mpicc -D M=$x -D P=$z para_extern.c -o para_extern.exe
 echo 'Compilation complete.'
 
 # Writing jobscripts using mpi.sub template. DO NOT CHANGE ANYTHING!
@@ -51,7 +51,7 @@ echo 'Submitting jobs...'
 qsub mpi_1.sub
 qsub mpi_2.sub
 qsub mpi_3.sub
-qsub mpi_4.sub
+# qsub mpi_4.sub
 ./serial.exe > HPTC_serial
 
 #!! DO NOT CHANGE ANYTHING PAST THIS LINE!
